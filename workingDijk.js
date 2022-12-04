@@ -1,3 +1,6 @@
+/*The big theta complexity of this implementation is Theta(n + n * 3n), or Theta(n^2), 
+because of the loops that are nested in that while loop (and, of course, the one that populates dists).
+*/
 function dijkstra(graph, source)
 {
 	if(graph.length == 0)
@@ -21,6 +24,7 @@ function dijkstra(graph, source)
 			if(dists[j] == inf)
 			{
 				unmarked = true;
+				j = dists.length;
 			}
 		}
 		if(unmarked)
